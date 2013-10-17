@@ -1,0 +1,75 @@
+<!doctype html>
+
+<html>
+  <!-- Built with Divshot - http://www.divshot.com -->
+  
+  <head>
+    <title>New Page</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootswatch/3.0.0/cyborg/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="codemirror.js"></script>
+    <script src="LanguageSupport/ruby.js"></script>
+    <link rel="stylesheet" href="codemirror.css">
+    <style>
+      .container {
+        margin-bottom: 15px;
+      }
+      .full {
+        width: 100%;
+      }
+      .container .btn {
+        margin-right: 10px;
+      }
+      
+      #code {
+        background-color: black;
+      }
+      
+    }
+    </style>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    var highlightedWord = "contains";
+    var myCodeMirror = CodeMirror(document.getElementById("code", {
+        mode: "text/x-ruby",
+        tabMode: "indent",
+        matchBrackets: true,
+        indentUnit: 4
+      }));
+    $("#code").bind("keyup", function (e) {
+      console.log(myCodeMirror.getValue());
+    })
+  });
+  </script>
+  </head>
+  
+  <body>
+    <div class="container">
+      <h1>Welcome...</h1>
+    </div>
+    <div class="container">
+      <div class="container pull-left">
+        <div>
+          <!-- <a class="btn btn-primary btn-sm">New</a><input type="text" class="form-control pull-left input-sm" placeholder="Session ID"> -->
+        </div>
+        <div></div>
+      </div>
+      <div class="container pull-right">Hook in</br><a class="btn btn-primary">Connect to Drive</a><a class="btn btn-primary">Connect to GitHub</a><a class="btn btn-primary">Connect to Dropbox</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="container pull-left full">Stage (type ruby code here)
+        <div class="well">
+        <div id = "code">
+        </div>
+        </div>
+      </div>
+    </div>
+    <footer class="container">
+      <span class="label pull-left label-default">Page constructed by Mizzou ACM 2013</span>
+    </footer>
+  </body>
+
+</html>
